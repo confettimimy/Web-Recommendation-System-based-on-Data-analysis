@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title of the document</title>
+
+    <style type="text/css">
+
+    html,
+    body,
+    header,
+    .carousel {
+      height: 100%;
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331!important;
+            }
+    }
+
+
+	body{
+	    background-color: black;
+	}		
+	div.a {
+	  text-align: center;
+	}
+
+
+  </style>
+
+</head>
+<body>
+
+<div class='a'>
+<p>.</p>
+<p>.</p>
+<h1 style="font-family: 'Nanum Barun Gothic'; color:white">줄거리 기반 추천 영화</h1>
+<p style="font-family: 'Nanum Barun Gothic'; color:white">선택하신 영화와 비슷한 줄거리의 영화들을 모아봤어요.</p>
+<p>.</p>
+
+
+	     <div class="story_result2">
+
+			{% if image_file4 %}
+			<img src="{{ url_for('static', filename=image_file4[0] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[1] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[2] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[3] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[4] ) }}", width="150" height="200">
+			<p></p>
+			<img src="{{ url_for('static', filename=image_file4[5] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[6] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[7] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file4[8] ) }}", width="150" height="200">
+			{% endif %}
+		
+		</div>
+
+</div>
+
+</body>
+</html>

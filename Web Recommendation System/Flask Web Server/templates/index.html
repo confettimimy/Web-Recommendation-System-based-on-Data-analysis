@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>좋은영화(주)</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{{url_for('static', filename='css/mdb.min.css')}}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{{url_for('static', filename='css/style.min.css')}}" rel="stylesheet">
+  <!-- 나눔 바른 고딕 웹 폰트 적용하기 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+  <style type="text/css">
+
+    html,
+    body,
+    header,
+    .carousel {
+      height: 100%;
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331!important;
+            }
+    }
+
+    .hangul {
+        font-family: 'Nanum Barun Gothic' !important;
+    }
+	body{
+	    background-color: black;
+	}		
+	.myDiv {
+		height: 250px;
+		width: 1000px;
+		background-color: black;
+		text-align: center;
+	}
+	.myDivSmall {
+		height: 5px;
+		width: 1000px;
+		background-color: black;
+		text-align: center;
+	}
+	.myDivSmall2 {
+		height: 150px;
+		width: 1000px;
+		background-color: black;
+		text-align: center;
+	}
+	.buttonDiv {
+	  /* border: grey; */
+	  color: white;
+	  text-align: center;
+	  text-decoration: none;
+	  /* display: inline-block; */
+	  font-size: 17px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	  height: 50px;
+	  width: 115px;
+	}
+	.buttonDiv2 {
+	  /* border: grey; */
+	  color: black;
+	  text-align: center;
+	  text-decoration: none;
+	  /* display: inline-block; */
+	  font-size: 17px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	  height: 30px;
+	  width: 80px;
+	}
+	.buttonDiv:hover {
+	 background-color: yellow;
+     color: yellow;
+    }
+	.user_result {
+	  /* border: 5px outset red; */
+	  background-color: black;
+	  align-content: left;
+	}
+	.story_result {
+	  /* border: 5px outset yellow; */
+	  background-color: black;
+	  align-content: right;
+	}
+	.row {
+	  text-align: center;
+	}
+
+
+
+
+  </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#" target="_blank">
+        <strong class="hangul">좋은영화(주)</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+
+  <!--Carousel Wrapper-->
+  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+<!-- 
+    Indicators
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    /.Indicators -->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active" id='location0'>
+        <div class="view">
+
+        
+		  
+          <img src="{{ url_for('static', filename='메인.png' ) }}" width='1600'>
+
+		 
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="mb-4">
+                <strong style="font-family: 'Nanum Barun Gothic'">좋은영화</strong>
+              </h1>
+
+              <p>
+                <strong style="font-family: 'Nanum Barun Gothic'">강력한 추천 서비스를 사용해보세요</strong>
+              </p>
+
+
+			  <a target="_blank" id="login0" class="btn btn-outline-white btn-lg">로그인</a>
+			  
+			  <hr>
+			  <hr>
+
+			  
+			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('login0');
+			  hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location1").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 200);
+				  })
+			  </script>
+
+			  <button class='buttonDiv2' style="font-family: 'Nanum Barun Gothic'; color:black" id="x">기존고객</button>
+
+
+  			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('x');
+			  hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location3").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 2500);
+				  })
+			  </script>
+
+			  <button class='buttonDiv2' style="font-family: 'Nanum Barun Gothic'; color:black" id="y">신규고객</button>
+
+
+  			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('y');
+			  hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location4").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 2500);
+				  })
+			  </script>
+			  
+			  
+			  
+
+
+
+
+
+
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+        <div class="view">
+
+          <img src="{{ url_for('static', filename='메인2.png' ) }}" width='1500'>
+
+          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            <!-- Content -->
+            <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="mb-4">
+                <strong style="font-family: 'Nanum Barun Gothic'">좋은영화</strong>
+              </h1>
+
+              <p>
+                <strong style="font-family: 'Nanum Barun Gothic'">강력한 추천 서비스를 사용해보세요</strong>
+              </p>
+
+
+			  <a target="_blank" id="login1" class="btn btn-outline-white btn-lg">로그인</a>
+
+			  <hr>
+			  			  <hr>
+			  
+			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('login1');
+			  hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location1").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 200);
+				  })
+			  </script>
+
+
+			  
+			  <button class='buttonDiv2' style="font-family: 'Nanum Barun Gothic'; color:black" id="x">기존고객</button>
+
+
+  			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('x');
+			  hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location3").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 2500);
+				  })
+			  </script>
+
+			  <button class='buttonDiv2' style="font-family: 'Nanum Barun Gothic'; color:black" id="y">신규고객</button>
+
+
+  			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('y');
+			  hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location4").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 2500);
+				  })
+			  </script>
+
+
+            </div>
+            <!-- Content -->
+
+          </div>
+          <!-- Mask & flexbox options-->
+
+        </div>
+      </div>
+      <!--/Second slide-->
+
+
+
+
+    </div>
+    <!--/.Slides-->
+
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+
+  </div>
+
+
+
+
+  <!--/.Carousel Wrapper-->
+
+  <!--Main layout-->
+  <main>
+      <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section id='location3'>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+	  <div class="myDivSmall">
+	  </div>
+
+        <h3 class="h3 text-center mb-5" style="font-family: 'Nanum Barun Gothic'; color:white">{{ user_id }}님, 이런 영화는 어떠세요?</h3>
+
+        <div class="row wow fadeIn">
+     
+
+
+
+          <!--Grid column-->
+          <div class="user_result">
+
+            <p class="h5 text-center mb-4" style="font-family: 'Nanum Barun Gothic'; color:white">{{ user_id }}님의 추천영화</p>
+
+            {% if image_file %}
+			{{image_file}}
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[0] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/2" target="_blank"> <img src="{{ url_for('static', filename=image_file[1] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[2] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[3] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[4] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[5] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[6] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[7] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[8] ) }}", width="150" height="200"> </a>
+			{% endif %}
+		 
+		 </div>
+
+
+			<hr></hr>
+
+			<button class='buttonDiv' style="font-family: 'Nanum Barun Gothic'; color:black" id="logout">로그아웃</button>
+		  	<script type="text/javascript">
+			 var hw = document.getElementById('logout');
+			 hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#carousel-example-1z").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 200);
+				  })
+			 </script>
+
+
+
+      </section>
+
+
+	  <hr></hr>
+	  <div class="myDiv">
+	  </div>
+
+
+
+
+        <!--신규 고객 추천영화 화면-->
+	    <section id='location4'>
+
+        <h3 class="h3 text-center mb-5" style="font-family: 'Nanum Barun Gothic'; color:white">첫 방문을 환영합니다!</h3>
+
+        <div class="row wow fadeIn">
+     
+
+
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4" style="font-family: 'Nanum Barun Gothic'; color:white">처음오신 당신에게 딱!맞는 영화</p>
+
+            {% if image_file %}
+			<img src="{{ url_for('static', filename=image_file2[0] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[1] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[2] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[3] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[4] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[5] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[6] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[7] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[8] ) }}", width="150" height="200">
+			{% endif %}
+
+
+
+		  </div>
+
+        </div>
+
+
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--로그인 화면 - 기존고객 로그인용-->
+      
+      <section class="mt-5 wow fadeIn0" id="location1">
+	  <div class="myDiv">
+	  </div>
+
+        <!--Grid row-->
+        <div class="row">
+
+          <div class="col-md-6 mb-4">
+            <h1 class="h3 mb-3" style="font-family: 'Nanum Barun Gothic'; color:white">로그인</h1>
+          </div>
+
+          
+            <form action="/" method="post">
+              <!-- Default form group -->
+
+                  <!-- Default input -->	
+                  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white" for="formGroupExampleInput">고유식별 ID</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="user" class="form-control" id="formGroupExampleInput" placeholder="Mr.chung">
+                  </div>
+                  <!-- Default input -->
+                  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white"  for="formGroupExampleInput">비밀번호</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="password" class="form-control" id="formGroupExampleInput" placeholder="xxxxxxxxxx">
+                  </div>
+
+
+              <!-- Default form group -->
+              <button class='buttonDiv'style="font-family: 'Nanum Barun Gothic'; color:black" type="submit" id="login2">로그인</button>
+              </form>
+			  <hr>
+			  <button class='buttonDiv' style="font-family: 'Nanum Barun Gothic'; color:black" id="welcome">회원가입</button>
+
+			<!--   <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('login2');
+			  hw.addEventListener('click', function(){
+			  				  //스크롤 이동
+			  				   var offset = $("#location3").offset();
+			  				   $('html, body').animate({scrollTop : offset.top}, 200);
+			  				  })
+			  </script>
+			   -->
+
+			<hr>
+
+			  <script type="text/javascript">
+			  var hw3 = document.getElementById('welcome');
+			  hw3.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#location11").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 200);
+				  })
+			  </script>
+          
+
+        </div>
+	  <div class="myDiv">
+	  </div> 
+      </section>
+
+
+
+
+
+
+      <!--회원가입 화면 - 신규고객 -->
+
+      <section class="mt-5 wow fadeIn0(2)" id="location11">
+	  <div class="myDivSmall2">
+	  </div> 
+
+        <!--Grid row-->
+        <div class="row">
+
+
+          <div class="col-md-6 mb-4">
+            <h3 class="h3 mb-3" style="font-family: 'Nanum Barun Gothic'; color:white">회원가입</h3>
+          </div>
+
+          
+            <form action="/" method="post">
+
+                  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white" for="formGroupExampleInput">고유식별 ID 설정</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="user" class="form-control"id="formGroupExampleInput" placeholder="">
+                  </div>
+                  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white" for="formGroupExampleInput">비밀번호 설정</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="password" class="form-control" id="formGroupExampleInput" placeholder="xxxxxxxxxxxxx">
+                  </div>
+
+				  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white" for="formGroupExampleInput">나이</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="age" class="form-control" id="formGroupExampleInput" placeholder="45">
+                  </div>
+				  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white" for="formGroupExampleInput">아이가 있습니까?(y/n)</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="child" class="form-control" id="formGroupExampleInput" placeholder="y">
+                  </div>
+				  <div class="form-group">
+                      <label style="font-family: 'Nanum Barun Gothic'; color:white" for="formGroupExampleInput">선호장르</label>
+                      <input style="font-family: 'Nanum Barun Gothic'; color:black" type="text" name="genre" class="form-control" id="formGroupExampleInput" placeholder="horror">
+                  </div>
+
+
+
+
+
+
+              <!-- Default form group -->
+              <button class='buttonDiv' style="font-family: 'Nanum Barun Gothic'; color:black" !important;" type="submit" id="login3" class="login3">가입 및 로그인</button>
+
+<!-- 			  <script src="assets/jquery-3.3.1.js"></script>
+			  <script type="text/javascript">
+			  var hw = document.getElementById('login3');
+			  hw.addEventListener('click', function(){
+			  				  //스크롤 이동
+			  				   var offset2 = $("#location4").offset();
+			  				   $('html, body').animate({scrollTop : offset2.top}, 200);
+			  				  })
+			  </script> -->
+
+            
+          
+
+        </div>
+	  <div class="myDiv">
+	  </div> 
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+  Section: Main info
+      <section class="mt-5 wow fadeIn" id="location2">
+
+
+        Grid row
+        <div class="row" >
+
+
+          <div class="col-md-6 mb-4">
+            <h3 class="h3 mb-3" style="font-family: 'Nanum Barun Gothic'; color:white">이번주 인기 영화</h3>
+          </div>
+		  <div class="myDivSmall">
+	      </div> 
+            <img src="{{ url_for('static', filename='tt1398426.jpg' ) }}", width="150" height="200">
+			<p>...........</p>
+			<img src="{{ url_for('static', filename='tt2510894.jpg' ) }}", width="150" height="200">
+			<p>...........</p>
+			<img src="{{ url_for('static', filename='tt3659388.jpg' ) }}", width="150" height="200">
+			<p>...........</p>
+			<img src="{{ url_for('static', filename='tt2379713.jpg' ) }}", width="150" height="200">
+			<p>...........</p>
+			<img src="{{ url_for('static', filename='tt2452042.jpg' ) }}", width="150" height="200">
+			<p>...........</p>
+			<img src="{{ url_for('static', filename='tt1951266.jpg' ) }}", width="150" height="200">
+       
+
+        </div>
+	  <div class="myDiv">
+	  </div> 
+      </section>
+      Section: Main info
+ -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+      <section id='location3'>
+
+        <h3 class="h3 text-center mb-5" style="font-family: 'Nanum Barun Gothic'; color:white">{{ user_id }}님, 이런 영화는 어떠세요?</h3>
+
+        <div class="row wow fadeIn">
+     
+
+
+
+          Grid column
+          <div class="user_result">
+
+            <p class="h5 text-center mb-4" style="font-family: 'Nanum Barun Gothic'; color:white">{{ user_id }}님의 추천영화</p>
+
+            {% if image_file %}
+			{{image_file}}
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[0] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/2" target="_blank"> <img src="{{ url_for('static', filename=image_file[1] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[2] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[3] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[4] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[5] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[6] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[7] ) }}", width="150" height="200"> </a>
+			<a href="http://127.0.0.1:5000/new" target="_blank"> <img src="{{ url_for('static', filename=image_file[8] ) }}", width="150" height="200"> </a>
+			{% endif %}
+		 
+		 </div>
+
+
+			<hr></hr>
+
+			<button class='buttonDiv' style="font-family: 'Nanum Barun Gothic'; color:black" id="logout">로그아웃</button>
+		  	<script type="text/javascript">
+			 var hw = document.getElementById('logout');
+			 hw.addEventListener('click', function(){
+				  //스크롤 이동
+				   var offset = $("#carousel-example-1z").offset();
+				   $('html, body').animate({scrollTop : offset.top}, 200);
+				  })
+			 </script>
+
+
+
+      </section>
+
+
+	  <hr></hr>
+	  <div class="myDiv">
+	  </div>
+
+
+
+
+        신규 고객 추천영화 화면
+	    <section id='location4'>
+
+        <h3 class="h3 text-center mb-5" style="font-family: 'Nanum Barun Gothic'; color:white">첫 방문을 환영합니다!</h3>
+
+        <div class="row wow fadeIn">
+     
+
+
+
+          Grid column
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4" style="font-family: 'Nanum Barun Gothic'; color:white">처음오신 당신에게 딱!맞는 영화</p>
+
+            {% if image_file %}
+			<img src="{{ url_for('static', filename=image_file2[0] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[1] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[2] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[3] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[4] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[5] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[6] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[7] ) }}", width="150" height="200">
+			<img src="{{ url_for('static', filename=image_file2[8] ) }}", width="150" height="200">
+			{% endif %}
+
+
+
+		  </div>
+
+        </div>
+
+
+      </section>
+
+
+
+
+ -->
+
+
+
+
+
+
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+
+    <hr class="my-4">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      <a target="_blank"> A반 1조 </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static', filename='js/mdb.min.js')}}"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+</body>
+
+</html>
