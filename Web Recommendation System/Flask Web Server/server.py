@@ -1,52 +1,49 @@
-﻿# -*- coding: utf-8 -*-
+﻿'''-*- coding: utf-8 -*-'''
+# 플라스크 패키지 설치
 from flask import Flask, render_template, request
 import base64
 
 
-# import tensorflow.compat.v1 as tf
-# tf.disable_v2_behavior() 
-# import tensorflow as tfs
-
-
-# 하차장 알고리즘 라이브러리
+# has 알고리즘 라이브러리
 import pandas
 from sklearn.model_selection import train_test_split
 import numpy as np
 import pandas as pd
-import pylab as pl
+#import pylab as pl #이 모듈에 대한 에러 때문에 잠시 주석처리
 import math as mt
 import time
-
 import random
-
 import Recommenders4 as Recommenders
+
+
+# model폴더의 natural.py -> 자연어처리 모듈
 from model import natural
 
 
 
-app = Flask(__name__)
 
-
-
-
-# 하하
+# has
 ratings_metadata_file = 'has_movie.csv'
 ratings_df =  pd.read_csv(ratings_metadata_file)
 
 
 
+app = Flask(__name__)
+
+# 메인 페이지
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
         return render_template('index.html')
     if request.method == 'POST':
-        # 파라미터를 전달 받습니다.
+        # 파라미터를 전달 받는다.
         user = request.form['user'] # 기존고객 로그인 아이디 입력받음
         user = str(user)
-  
 
-        #하차장 알고리즘
-        #Read rating movies  metadata
+
+        
+        # has 알고리즘
+        # Read rating movies  metadata
         # Cluster 0, 3 (40대)에 가중치 2.5 부여
         ratings_df['rating'].where((ratings_df['movieId']!='I-1020') | (ratings_df['ClusteringID']!=0)&(ratings_df['ClusteringID']!=3),ratings_df['rating']+2.5)
         ratings_df['rating'].where((ratings_df['movieId']!='I-1022') | (ratings_df['ClusteringID']!=0)&(ratings_df['ClusteringID']!=3),ratings_df['rating']+2.5)
@@ -105,23 +102,14 @@ def index():
         j=0
         for j in range(len(b)):
             b[j] = b[j]+'.jpg'
-        
 
-
-        # movie = "Up"
-
-
-        # c = natural.national(movie)
-
-        # k=0
-        # for k in range(len(c)):
-        #     c[k] = c[k]+'.jpg'
-    
-
+            
         return render_template('index.html', image_file=a, image_file2=b, user_id = user)
 
 
-# 호진정 줄거리기반 추천 알고리즘
+
+
+# 줄거리 기반 추천 알고리즘
 # 새 html에 띄우기
 @app.route('/new', methods=['GET', 'POST']) 
 def new():
@@ -152,6 +140,7 @@ def new2():
         
         
         return render_template('new_frame2.html', image_file4 = d)
+
 
 
         
