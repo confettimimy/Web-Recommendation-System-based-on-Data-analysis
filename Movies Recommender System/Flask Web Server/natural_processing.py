@@ -3,7 +3,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
 
-
 def national(movie_name):
 
     df_meta = pd.read_csv("movie_natlang.csv")
