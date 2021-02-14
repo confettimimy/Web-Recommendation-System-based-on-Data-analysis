@@ -1,5 +1,5 @@
 ﻿'''-*- coding: utf-8 -*-'''
-# 플라스크 패키지 설치
+# 플라스크 패키지 가져오기
 from flask import Flask, render_template, request
 import base64
 
